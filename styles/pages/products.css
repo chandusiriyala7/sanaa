@@ -1,0 +1,172 @@
+/* Products Showcase */
+.products-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.product-showcase-card {
+    text-align: center;
+}
+
+.product-showcase-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-showcase-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.product-showcase-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: var(--spacing-sm) 0;
+}
+
+.product-showcase-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+}
+
+.product-description {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-sm) 0;
+    text-align: left;
+}
+
+.product-features li {
+    padding: 0.5rem 0;
+    color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.product-features li:last-child {
+    border-bottom: none;
+}
+
+/* Herbs Grid */
+.herbs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.herb-card {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.herb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.herb-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.herb-card h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
+}
+
+.herb-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* Specifications */
+.specifications-container {
+    max-width: 800px;
+    margin: var(--spacing-md) auto 0;
+}
+
+.specifications-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.spec-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    align-items: center;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.spec-value {
+    color: var(--color-text-dark);
+}
+
+/* CTA Box */
+.cta-box {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-box h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-box p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .products-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .herbs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spec-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .spec-label {
+        font-size: 0.875rem;
+    }
+}

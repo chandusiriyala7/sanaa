@@ -1,0 +1,138 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: transform var(--transition-normal);
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-link {
+    font-weight: 500;
+    color: var(--color-text-dark);
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-normal);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: var(--color-primary);
+}
+
+.navbar-link.active::after,
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-normal);
+}
+
+.navbar-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+}
+
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-white);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        box-shadow: var(--shadow-md);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all var(--transition-normal);
+    }
+
+    .navbar-menu.active {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    .navbar-menu li {
+        padding: 0 var(--spacing-md);
+    }
+
+    .navbar-link {
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--color-bg-light);
+    }
+
+    .navbar-link::after {
+        display: none;
+    }
+}

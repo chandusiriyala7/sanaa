@@ -1,0 +1,32 @@
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: var(--spacing-sm);
+    }
+
+    .card-hover:hover {
+        transform: translateY(-4px);
+    }
+}

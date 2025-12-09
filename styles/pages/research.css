@@ -1,0 +1,234 @@
+/* Lab Info Container */
+.lab-info-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.lab-badge {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    color: var(--color-white);
+    position: sticky;
+    top: 100px;
+}
+
+.badge-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.lab-badge h2 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.lab-subtitle {
+    font-size: 0.9375rem;
+    opacity: 0.95;
+    margin-bottom: var(--spacing-md);
+}
+
+.iso-badge {
+    background: var(--color-white);
+    color: var(--color-primary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.iso-icon {
+    background: var(--color-primary);
+    color: var(--color-white);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+}
+
+.lab-description h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.lab-description p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+/* Highlights Grid */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.highlight-card {
+    text-align: center;
+}
+
+.highlight-check {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto var(--spacing-sm);
+}
+
+/* Test Results */
+.test-results-container {
+    max-width: 900px;
+    margin: var(--spacing-md) auto 0;
+}
+
+.test-results-grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.test-result-item {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    align-items: center;
+}
+
+.test-name {
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.test-result {
+    color: var(--color-text-dark);
+    font-family: monospace;
+}
+
+.test-status {
+    text-align: right;
+}
+
+.status-badge {
+    background: #d4edda;
+    color: #155724;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Certification Summary */
+.certification-summary {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.summary-card {
+    padding: var(--spacing-lg);
+}
+
+.summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.summary-list li {
+    padding: var(--spacing-sm) 0;
+    font-size: 1.125rem;
+    color: var(--color-text-dark);
+    border-bottom: 1px solid var(--color-bg-light);
+}
+
+.summary-list li:last-child {
+    border-bottom: none;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.download-section h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.certification-preview {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.certification-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.download-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-sm);
+}
+
+.download-buttons a {
+    text-decoration: none;
+}
+
+.download-note {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lab-info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-badge {
+        position: static;
+    }
+
+    .test-result-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .test-status {
+        text-align: left;
+    }
+
+    .certification-preview {
+        max-width: 100%;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+}
