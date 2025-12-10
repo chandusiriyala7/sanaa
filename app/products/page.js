@@ -12,21 +12,21 @@ export default function Products() {
     const products = [
         {
             name: 'Large Pads',
-            price: '₹8',
+            price: '₹15',
             image: '/images/large-pad.png',
             description: 'Perfect for regular flow days',
             features: ['280mm length', 'Regular absorbency', 'Comfortable fit']
         },
         {
             name: 'Extra Large Pads',
-            price: '₹10',
+            price: '₹20',
             image: '/images/xl-pad.png',
             description: 'Ideal for heavy flow days',
             features: ['320mm length', 'High absorbency', 'Extra coverage']
         },
         {
             name: 'Delivery Pads',
-            price: '₹12',
+            price: '₹15',
             image: '/images/delivery-pad.png',
             description: 'Specially designed for post-delivery care',
             features: ['360mm length', 'Maximum absorbency', 'Gentle healing']
