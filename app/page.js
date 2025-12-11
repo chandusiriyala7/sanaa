@@ -30,9 +30,9 @@ export default function Home() {
     ];
 
     const products = [
-        { name: 'Large Pads', price: '₹8', image: '/images/large-pad.png', description: 'Perfect for regular flow' },
-        { name: 'Extra Large Pads', price: '₹10', image: '/images/xl-pad.png', description: 'For heavy flow days' },
-        { name: 'Delivery Pads', price: '₹12', image: '/images/delivery-pad.png', description: 'Post-delivery care' },
+        { name: 'Large Pads', price: '₹15', image: '/images/large-pad.png', description: 'Perfect for regular flow' },
+        { name: 'Extra Large Pads', price: '₹20', image: '/images/xl-pad.png', description: 'For heavy flow days' },
+        { name: 'Delivery Pads', price: '₹15', image: '/images/delivery-pad.png', description: 'Post-delivery care' },
     ];
 
     return (
