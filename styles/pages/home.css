@@ -208,6 +208,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Reset grid-column spans for mobile */
+    .highlight-card:nth-child(1),
+    .highlight-card:nth-child(2),
+    .highlight-card:nth-child(3),
+    .highlight-card:nth-child(4) {
+        grid-column: auto;
+    }
+
     /* Center the 5th card on mobile */
     .highlight-card:nth-child(5) {
         grid-column: 1 / -1;
