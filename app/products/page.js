@@ -16,7 +16,8 @@ export default function Products() {
             id: 'large-pad',
             name: 'Large Pads',
             price: '₹15',
-            image: '/images/product-img1.png',
+            image: '/images/large-pad.png',
+            realImage: '/images/product-img1.png',
             description: 'Perfect for regular flow days',
             features: ['280mm Length', 'Regular Absorbency', 'Comfortable Fit'],
             detailedDescription: 'Our Large Pads are designed for regular flow days, providing optimal comfort and protection. Made with 100% pure cotton and infused with natural herbs, these pads ensure you stay fresh and comfortable throughout the day.'
@@ -25,7 +26,8 @@ export default function Products() {
             id: 'xl-pad',
             name: 'Extra Large Pads',
             price: '₹20',
-            image: '/images/product-img1.png',
+            image: '/images/xl-pad.png',
+            realImage: '/images/product-img1.png',
             description: 'Ideal for heavy flow days',
             features: ['320mm Length', 'High Absorbency', 'Extra Coverage'],
             detailedDescription: 'Extra Large Pads offer superior protection for heavy flow days. With enhanced absorbency and extra length, you can feel confident and secure all day long.'
@@ -34,7 +36,8 @@ export default function Products() {
             id: 'delivery-pad',
             name: 'Delivery Pads',
             price: '₹15',
-            image: '/images/product-img1.png',
+            image: '/images/delivery-pad.png',
+            realImage: '/images/product-img1.png',
             description: 'Specially designed for post-delivery care',
             features: ['360mm Length', 'Maximum Absorbency', 'Gentle Healing'],
             detailedDescription: 'Our Delivery Pads are specially formulated for post-delivery care. Extra soft and gentle, with maximum absorbency and healing herbs to support your recovery.'
@@ -119,15 +122,25 @@ export default function Products() {
                                     <li key={idx}>✓ {feature}</li>
                                 ))}
                             </ul>
-                            <button
-                                className="add-to-cart-btn"
-                                onClick={() => {
-                                    addToCart(product);
-                                    showToast(`${product.name} added to cart!`, 'success');
-                                }}
-                            >
-                                Add to Cart
-                            </button>
+                            <div className="product-actions">
+                                <a
+                                    href={product.realImage}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="view-product-btn"
+                                >
+                                    View Product
+                                </a>
+                                <button
+                                    className="add-to-cart-btn"
+                                    onClick={() => {
+                                        addToCart(product);
+                                        showToast(`${product.name} added to cart!`, 'success');
+                                    }}
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
                         </Card>
                     ))}
                 </div>
