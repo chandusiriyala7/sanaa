@@ -64,60 +64,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Highlights Section */}
-            <Section background="light">
-                <h2 className="text-center">Why Choose Sanaa?</h2>
-                <div className="highlights-grid">
-                    {highlights.map((item, index) => (
-                        <Card key={index} className="highlight-card">
-                            <div className="highlight-icon">{item.icon}</div>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                        </Card>
-                    ))}
-                </div>
-            </Section>
-
-            {/* Prevents Section */}
-            <Section>
-                <h2 className="text-center text-primary">Health Benefits</h2>
-                <p className="text-center" style={{ marginBottom: 'var(--spacing-md)' }}>
-                    Our herbal sanitary napkins help prevent and protect against:
-                </p>
-                <div className="prevents-grid">
-                    {prevents.map((item, index) => (
-                        <div key={index} className="prevent-item">
-                            <span className="prevent-icon">{item.icon}</span>
-                            <span className="prevent-title">{item.title}</span>
-                        </div>
-                    ))}
-                </div>
-            </Section>
-
-            {/* Product Preview */}
-            <Section background="light">
-                <h2 className="text-center">Our Products</h2>
-                <div className="products-grid">
-                    {products.map((product, index) => (
-                        <Card key={index} className="product-card">
-                            <div className="product-image">
-                                <img src={product.image} alt={product.name} />
-                            </div>
-                            <h3>{product.name}</h3>
-                            <p className="product-price">{product.price} <span>per piece</span></p>
-                            <p>{product.description}</p>
-                        </Card>
-                    ))}
-                </div>
-                <div className="text-center" style={{ marginTop: 'var(--spacing-md)' }}>
-                    <Button href="/products" variant="primary">
-                        View All Products
-                    </Button>
-                </div>
-            </Section>
-
             {/* Vision & Mission Preview */}
-            <Section>
+            <Section background="light">
                 <div className="vision-mission-preview">
                     <div className="vm-card">
                         <h3>Our Vision</h3>
@@ -136,6 +84,58 @@ export default function Home() {
                 <div className="text-center" style={{ marginTop: 'var(--spacing-md)' }}>
                     <Button href="/about" variant="secondary">
                         Read More About Us
+                    </Button>
+                </div>
+            </Section>
+
+            {/* Highlights Section */}
+            <Section>
+                <h2 className="text-center">Why Choose Sanaa?</h2>
+                <div className="highlights-grid">
+                    {highlights.map((item, index) => (
+                        <Card key={index} className="highlight-card">
+                            <div className="highlight-icon">{item.icon}</div>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                        </Card>
+                    ))}
+                </div>
+            </Section>
+
+            {/* Prevents Section */}
+            <Section background="light">
+                <h2 className="text-center text-primary">Health Benefits</h2>
+                <p className="text-center" style={{ marginBottom: 'var(--spacing-md)' }}>
+                    Our herbal sanitary napkins help prevent and protect against:
+                </p>
+                <div className="prevents-grid">
+                    {prevents.map((item, index) => (
+                        <div key={index} className="prevent-item">
+                            <span className="prevent-icon">{item.icon}</span>
+                            <span className="prevent-title">{item.title}</span>
+                        </div>
+                    ))}
+                </div>
+            </Section>
+
+            {/* Product Preview */}
+            <Section>
+                <h2 className="text-center">Our Products</h2>
+                <div className="products-grid">
+                    {products.map((product, index) => (
+                        <Card key={index} className="product-card">
+                            <div className="product-image">
+                                <img src={product.image} alt={product.name} />
+                            </div>
+                            <h3>{product.name}</h3>
+                            <p className="product-price">{product.price} <span>per piece</span></p>
+                            <p>{product.description}</p>
+                        </Card>
+                    ))}
+                </div>
+                <div className="text-center" style={{ marginTop: 'var(--spacing-md)' }}>
+                    <Button href="/products" variant="primary">
+                        View All Products
                     </Button>
                 </div>
             </Section>

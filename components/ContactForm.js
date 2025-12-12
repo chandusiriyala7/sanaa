@@ -13,16 +13,31 @@ export default function ContactForm() {
         setIsSubmitting(true);
         setSubmitStatus(null);
 
-        // Simulate form submission
-        setTimeout(() => {
-            console.log('Form data:', data);
-            setSubmitStatus('success');
-            setIsSubmitting(false);
-            reset();
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-            // Clear success message after 5 seconds
-            setTimeout(() => setSubmitStatus(null), 5000);
-        }, 1000);
+            const result = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                reset();
+                setTimeout(() => setSubmitStatus(null), 5000);
+            } else {
+                setSubmitStatus('error');
+                console.error('Form submission error:', result.error);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -83,11 +98,19 @@ export default function ContactForm() {
                 {errors.message && <span className="error-message">{errors.message.message}</span>}
             </div>
 
+
             {submitStatus === 'success' && (
                 <div className="success-message">
                     Thank you for your message! We'll get back to you soon. 🌸
                 </div>
             )}
+
+            {submitStatus === 'error' && (
+                <div className="error-message">
+                    Sorry, there was an error sending your message. Please try again.
+                </div>
+            )}
+
 
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
                 {isSubmitting ? 'Sending...' : 'Send Message'}

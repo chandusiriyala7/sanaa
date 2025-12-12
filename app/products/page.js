@@ -1,35 +1,41 @@
+'use client';
+
+import { useCart } from '@/app/context/CartContext';
 import Section from '@/components/Section';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
 import '../../styles/pages/products.css';
 
-export const metadata = {
-    title: 'Products',
-    description: 'Explore our range of herbal sanitary napkins - Large, Extra Large, and Delivery pads. 100% cotton with natural herbs.',
-};
-
 export default function Products() {
+    const { addToCart } = useCart();
+
     const products = [
         {
+            id: 'large-pad',
             name: 'Large Pads',
             price: '₹15',
-            image: '/images/large-pad.png',
+            image: '/images/product-img1.png',
             description: 'Perfect for regular flow days',
-            features: ['280mm length', 'Regular absorbency', 'Comfortable fit']
+            features: ['280mm Length', 'Regular Absorbency', 'Comfortable Fit'],
+            detailedDescription: 'Our Large Pads are designed for regular flow days, providing optimal comfort and protection. Made with 100% pure cotton and infused with natural herbs, these pads ensure you stay fresh and comfortable throughout the day.'
         },
         {
+            id: 'xl-pad',
             name: 'Extra Large Pads',
             price: '₹20',
-            image: '/images/xl-pad.png',
+            image: '/images/product-img1.png',
             description: 'Ideal for heavy flow days',
-            features: ['320mm length', 'High absorbency', 'Extra coverage']
+            features: ['320mm Length', 'High Absorbency', 'Extra Coverage'],
+            detailedDescription: 'Extra Large Pads offer superior protection for heavy flow days. With enhanced absorbency and extra length, you can feel confident and secure all day long.'
         },
         {
+            id: 'delivery-pad',
             name: 'Delivery Pads',
             price: '₹15',
-            image: '/images/delivery-pad.png',
+            image: '/images/product-img1.png',
             description: 'Specially designed for post-delivery care',
-            features: ['360mm length', 'Maximum absorbency', 'Gentle healing']
+            features: ['360mm Length', 'Maximum Absorbency', 'Gentle Healing'],
+            detailedDescription: 'Our Delivery Pads are specially formulated for post-delivery care. Extra soft and gentle, with maximum absorbency and healing herbs to support your recovery.'
         },
     ];
 
@@ -111,6 +117,15 @@ export default function Products() {
                                     <li key={idx}>✓ {feature}</li>
                                 ))}
                             </ul>
+                            <button
+                                className="add-to-cart-btn"
+                                onClick={() => {
+                                    addToCart(product);
+                                    alert(`${product.name} added to cart!`);
+                                }}
+                            >
+                                Add to Cart
+                            </button>
                         </Card>
                     ))}
                 </div>
