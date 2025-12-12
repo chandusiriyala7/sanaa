@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { CartProvider } from '@/app/context/CartContext';
 import { ToastProvider } from '@/app/context/ToastContext';
 import './globals.css';
+import '../styles/components/toast.css';
 
 const inter = Inter({
     subsets: ['latin'],
