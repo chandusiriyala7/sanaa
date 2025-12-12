@@ -1,6 +1,7 @@
 'use client';
 
 import { useCart } from '@/app/context/CartContext';
+import { useToast } from '@/app/context/ToastContext';
 import Section from '@/components/Section';
 import Card from '@/components/Card';
 import Button from '@/components/Button';
@@ -8,6 +9,7 @@ import '../../styles/pages/products.css';
 
 export default function Products() {
     const { addToCart } = useCart();
+    const { showToast } = useToast();
 
     const products = [
         {
@@ -121,7 +123,7 @@ export default function Products() {
                                 className="add-to-cart-btn"
                                 onClick={() => {
                                     addToCart(product);
-                                    alert(`${product.name} added to cart!`);
+                                    showToast(`${product.name} added to cart!`, 'success');
                                 }}
                             >
                                 Add to Cart

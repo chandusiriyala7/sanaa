@@ -2,6 +2,7 @@ import { Inter, Outfit } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { CartProvider } from '@/app/context/CartContext';
+import { ToastProvider } from '@/app/context/ToastContext';
 import './globals.css';
 
 const inter = Inter({
@@ -79,9 +80,11 @@ export default function RootLayout({ children }) {
             </head>
             <body>
                 <CartProvider>
-                    <Navbar />
-                    <main>{children}</main>
-                    <Footer />
+                    <ToastProvider>
+                        <Navbar />
+                        <main>{children}</main>
+                        <Footer />
+                    </ToastProvider>
                 </CartProvider>
             </body>
         </html>
