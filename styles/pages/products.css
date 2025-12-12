@@ -62,41 +62,20 @@
     border-bottom: none;
 }
 
-/* Product Actions Container */
-.product-actions {
+/* Product Showcase Card - Ensure equal heights */
+.product-showcase-card {
     display: flex;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-sm);
+    flex-direction: column;
+    height: 100%;
 }
 
-/* View Product Button */
-.view-product-btn {
-    flex: 1;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--color-white);
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.view-product-btn:hover {
-    background: var(--color-primary-light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+.product-showcase-card .product-features {
+    flex-grow: 1;
 }
 
 /* Add to Cart Button */
 .add-to-cart-btn {
-    flex: 1;
+    width: 100%;
     padding: var(--spacing-sm) var(--spacing-md);
     background: var(--color-primary);
     color: var(--color-white);
@@ -105,6 +84,7 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    margin-top: auto;
     transition: all var(--transition-normal);
 }
 
@@ -116,6 +96,51 @@
 
 .add-to-cart-btn:active {
     transform: translateY(0);
+}
+
+/* Product Preview Section */
+.product-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.preview-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.preview-image {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-light);
+    padding: var(--spacing-md);
+}
+
+.preview-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.preview-caption {
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text-dark);
+    background: var(--color-white);
 }
 
 /* Herbs Grid */

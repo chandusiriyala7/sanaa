@@ -122,27 +122,45 @@ export default function Products() {
                                     <li key={idx}>✓ {feature}</li>
                                 ))}
                             </ul>
-                            <div className="product-actions">
-                                <a
-                                    href={product.realImage}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="view-product-btn"
-                                >
-                                    View Product
-                                </a>
-                                <button
-                                    className="add-to-cart-btn"
-                                    onClick={() => {
-                                        addToCart(product);
-                                        showToast(`${product.name} added to cart!`, 'success');
-                                    }}
-                                >
-                                    Add to Cart
-                                </button>
-                            </div>
+                            <button
+                                className="add-to-cart-btn"
+                                onClick={() => {
+                                    addToCart(product);
+                                    showToast(`${product.name} added to cart!`, 'success');
+                                }}
+                            >
+                                Add to Cart
+                            </button>
                         </Card>
                     ))}
+                </div>
+            </Section>
+
+            {/* Real Product Preview Section */}
+            <Section background="light">
+                <h2 className="text-center text-primary">Real Product Preview</h2>
+                <p className="text-center" style={{ marginBottom: 'var(--spacing-md)' }}>
+                    See what our premium herbal sanitary napkins actually look like
+                </p>
+                <div className="product-preview-grid">
+                    <div className="preview-card">
+                        <div className="preview-image">
+                            <img src="/images/product-img1.png" alt="Sanaa Herbal Pad" />
+                        </div>
+                        <p className="preview-caption">Individual Pad Packaging</p>
+                    </div>
+                    <div className="preview-card">
+                        <div className="preview-image">
+                            <img src="/images/product-img1.png" alt="Sanaa Herbal Pad Close-up" />
+                        </div>
+                        <p className="preview-caption">Product Close-up</p>
+                    </div>
+                    <div className="preview-card">
+                        <div className="preview-image">
+                            <img src="/images/product-img1.png" alt="Sanaa Herbal Pad Details" />
+                        </div>
+                        <p className="preview-caption">Premium Quality</p>
+                    </div>
                 </div>
             </Section>
 
