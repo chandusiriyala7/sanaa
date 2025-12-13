@@ -151,7 +151,7 @@ export default function Products() {
                     </div>
                     <div className="preview-card">
                         <div className="preview-image">
-                            <img src="/images/product-img1.png" alt="Sanaa Herbal Pad Close-up" />
+                            <img src="/images/product-img2.png" alt="Sanaa Herbal Pad Close-up" />
                         </div>
                         <p className="preview-caption">Product Close-up</p>
                     </div>
